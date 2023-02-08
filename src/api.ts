@@ -1,0 +1,1 @@
+export const APiURL : string = "https://sver-dose.onrender.com"

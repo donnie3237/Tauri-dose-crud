@@ -1,0 +1,122 @@
+.Allcr {
+    min-height: 120vh;
+    .status{
+        width: 80%;
+        padding: 40px;
+        height: 80px;
+        background-color: rgb(227, 87, 12);
+        margin: 0 auto;
+        color: white;
+        border-radius: 10px;
+        box-shadow:  0 0 4px rgb(42, 42, 42,0.8);
+    }
+    .from {
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      width: 80%;
+      margin: 30px auto;
+      flex-direction: column;
+      .from-title {
+        text-align: center;
+        
+        h2 {
+          margin: 20px 0;
+        }
+      }
+  
+      .from-content {
+        .from-content-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-direction: row;
+          .input {
+            width: calc(25% - 20px);
+  
+            input, label {
+              display: block;
+              width: 100%;
+              margin-bottom: 10px;
+            }
+  
+            label {
+              font-size: 14px;
+              font-weight: bold;
+              text-transform: uppercase;
+            }
+  
+            input {
+              background: #f7f7f7;
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              padding: 10px;
+              font-size: 14px;
+            }
+          }
+        }
+  
+        .textarea {
+          label {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+          }
+  
+          textarea {
+            background: #f7f7f7;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            width: calc(100%);
+            resize: none;
+          }
+        }
+      }
+    }
+    .btn{
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px 0;
+        cursor:pointer;
+    }
+}
+@media (min-width: 50px) and (max-width: 767px) {
+    .Allcr {
+        .from{
+            padding: 10px;
+          .from-content {
+            .from-content-title {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                flex-direction: column;
+              .input {
+                width: calc(100% - 20px);
+              }
+            }
+            .textarea {
+                textarea {
+                  background: #f7f7f7;
+                  border: 1px solid #ddd;
+                  border-radius: 5px;
+                  padding: 10px;
+                  font-size: 14px;
+                  width: calc(100% - 20px);
+                  resize: none;
+                }
+              }
+            }
+        }
+        
+        
+        .status{
+            display: none;
+        }
+    }
+}
+  
+

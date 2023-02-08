@@ -1,0 +1,31 @@
+.Menu{
+    width: 60px;
+    height: 100vh;
+    background-color: rgb(0, 0, 255);
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    left: 30px;
+    flex-direction: column;
+    a{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
+        svg{
+            color: white;
+            width: 30px;
+            height: 30px;
+            
+        }
+        &:hover{
+            background-color: rgb(54, 54, 247);
+        }
+        &.active{
+            background-color: black;
+            color: white;
+        }
+    }
+}

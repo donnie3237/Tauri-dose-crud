@@ -1,0 +1,72 @@
+{
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:33331",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "DosE-CRUD",
+    "version": "1.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": true,
+      "http": {
+        "all": true,
+        "request": true, 
+        "scope": ["https://sver-dose.onrender.com/*"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "publisher": "DosE",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "CRUD.DosE.inc",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [],
+      "shortDescription": "database management",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 300,
+        "resizable": true,
+        "width": 450,
+        "minWidth": 400,
+        "minHeight": 300,
+        "decorations": false,
+        "center": true,
+        "title": "DosE-CRUD"
+      }
+    ]
+  }
+}
