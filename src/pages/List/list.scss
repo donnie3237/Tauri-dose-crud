@@ -29,7 +29,7 @@ table {
         bottom: 30px;
     }
     .sortBy{
-        width: 100%;
+        width: calc(100%);
         color: white;
         cursor: pointer;
         background-color: rgb(41, 41, 41);
@@ -39,7 +39,12 @@ table {
         justify-content: space-around;
         font-family:'Times New Roman', Times, serif;
         div{
-            width: 33%;
+            &:hover{
+                background-color: rgb(112, 103, 243);
+                color: black;
+            }
+            width: calc(100%/3);
+            height: 100%;
             border-right: 1px solid rgb(247, 247, 247);
         }
     }
