@@ -17,6 +17,7 @@ h1{
         div{
             width: 50%;
             height: 400px;
+            flex-direction: column;
         }
         .on{
             background-color: red;
@@ -28,5 +29,6 @@ h1{
     .fro{
         background-color: aqua;
         height: 700px;
+        flex-direction: column;
     }
 }
