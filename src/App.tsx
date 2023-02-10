@@ -16,13 +16,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   //use cannot drag link web
-  // document.addEventListener("dragstart", function(event) {
-  //   event.preventDefault();
-  // });
+  document.addEventListener("dragstart", function(event) {
+    event.preventDefault();
+  });
   //not allow right click
-  // window.addEventListener("contextmenu", event => {
-  //   event.preventDefault();
-  // });
+  window.addEventListener("contextmenu", event => {
+    event.preventDefault();
+  });
   const [loading,setLoading] = useState<boolean>(true);
   useEffect(()=>{
     setTimeout(() => {

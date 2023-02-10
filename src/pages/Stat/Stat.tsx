@@ -31,41 +31,22 @@ ChartJS.register(
   scales
 );
 
-const options: Chart.ChartOptions = {
+const options : any= {
   responsive: true,
-  maintainAspectRatio: false,
-  scales:{
-  },
-  plugins: {
-    legend: true,
-    title: {
-      display: true,
-      text: 'อย่าลืมเขียนกุเด้',
-    },
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-            stepSize: 20
-          }
-        }
-      ]
-    }
-  },
+  maintainAspectRatio: false
 };
 
 function Stat() {
-  let Weightlabels : string[];
-  let weights : number[];
-  let heightlabel : string[];
-  let heights : number[];
-  let AgeLabel : string[];
-  let Age : number[];
-  let NewLabel : string[];
-  let NewEstA : number[];
-  let NewEstW : number[];
-  let NewEstH : number[];
+  let Weightlabels ;
+  let weights ;
+  let heightlabel ;
+  let heights ;
+  let AgeLabel ;
+  let Age ;
+  let NewLabel ;
+  let NewEstA ;
+  let NewEstW ;
+  let NewEstH ;
 
   const [user, setUser] = useState<any[]>();
 	useEffect(() => {
