@@ -11,7 +11,7 @@ table {
     th, td {
       padding: 8px;
       text-align: left;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #828181;
     }
     th {
       background-color: #000000;
@@ -25,15 +25,17 @@ table {
 .contain-title{
     height: 100px;
     position: relative;
+    background-color: rgb(71, 71, 71);
+    color: white;
     h2{
         position: absolute;
-        bottom: 30px;
+        bottom: 20px;
     }
     .sortBy{
         width: calc(100%);
         color: white;
         cursor: pointer;
-        background-color: rgb(41, 41, 41);
+        background-color: rgb(117, 116, 116);
         height: 30px;
         position: absolute;
         bottom: 0;

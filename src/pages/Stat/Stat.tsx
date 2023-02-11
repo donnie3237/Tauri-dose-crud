@@ -60,7 +60,7 @@ function Stat() {
     const sortedUserByWeight = [...user].sort((a, b) => b.weight - a.weight).slice(0,10);
     const sortedUserByHeight = [...user].sort((a, b) => b.height - a.height).slice(0,10);
     const sortedUserByAge = [...user].sort((a, b) => b.age - a.age).slice(0,10);
-    const sortedUserByNew =[...user].sort((a:any, b:any) => (b._id > a._id) ? 1 : ((a._id > b._id) ? -1 : 0)).slice(0,5)
+    const sortedUserByNew =[...user].sort((a:any, b:any) => (b._id > a._id) ? 1 : ((a._id > b._id) ? -1 : 0)).slice(0,20)
     Weightlabels = sortedUserByWeight.map((u:any) => u.name);
     weights = sortedUserByWeight.map((u:any) => u.weight);
     heightlabel = sortedUserByHeight.map((us:any) => us.name);
@@ -153,13 +153,13 @@ const data4 = {
       </div>
       <h1>Tallest</h1>
       <div className="">
-      <div className="roro2 flex">
+      <div className="roro flex">
         <Bar 
           data={data2}
           options={options}
         ></Bar>
       </div>
-      <div className="roro flex">
+      <div className="roro2 flex">
         <Pie
           data={data2}
           options={options}
@@ -168,13 +168,13 @@ const data4 = {
       </div>
       <h1>Oldest</h1>
       <div className="">
-      <div className="roro2 flex">
+      <div className="roro flex">
         <Bar 
           data={data3}
           options={options}
         ></Bar>
       </div>
-      <div className="roro flex">
+      <div className="roro2 flex">
         <Pie       
           data={data3}
           options={options}
@@ -183,7 +183,7 @@ const data4 = {
       </div>
       <h1>Newest Data</h1>
       <div className="">
-      <div className="roro2 flex">
+      <div className="roro flex">
         <Line 
           data={data4}
           options={options}

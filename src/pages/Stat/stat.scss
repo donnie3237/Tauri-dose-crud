@@ -13,7 +13,7 @@
     }
     .roro{
         background-color: rgb(255, 255, 255);
-        width: calc(90%);
+        width: 90%;
         height: 100%;
         max-height: 400px;
         min-height: 300px;
@@ -26,11 +26,28 @@
         height: 100%;
         max-height: 400px;
         min-height: 300px;
-        color: rgb(200, 255, 0);
-        color: rgb(2, 108, 2);
     }
     
 }
 .pink{
     background-color: pink;
+}
+@media (min-width: 50px) and (max-width: 500px) {
+    .stat{
+        div{
+            flex-direction: column;
+            height: 100%;
+        }
+        .roro{
+            background-color: rgb(255, 255, 255);
+            width: 80%;
+            height: 100%;
+            max-height: 300px;
+            min-height: 200px;
+            padding: 10%;
+        }
+        .roro2{
+            padding: 15% 5%;
+        }
+    }
 }

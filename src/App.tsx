@@ -20,9 +20,9 @@ function App() {
     event.preventDefault();
   });
   //not allow right click
-  window.addEventListener("contextmenu", event => {
-    event.preventDefault();
-  });
+  // window.addEventListener("contextmenu", event => {
+  //   event.preventDefault();
+  // });
   const [loading,setLoading] = useState<boolean>(true);
   useEffect(()=>{
     setTimeout(() => {
