@@ -4,4 +4,4 @@ This template should help get you started developing with Tauri, React and Types
 
 ## To install this
 
-[DosE-CRUD](https://dose-products.netlify.app/products/dosecrud)
+[DosE-CRUD](https://dose-products.netlify.app/#/products/dosecrud)
