@@ -1,6 +1,12 @@
 .up{
     position: relative;
     overflow-y: hidden;
+    .toup{
+        margin-top: 10px;
+        padding: 2px 30%;
+        text-decoration: none;
+        text-align: center;
+    }
     .check{
         position: relative;
         height: 100vh;
@@ -8,11 +14,6 @@
         margin-top: -50vh;
         h1{
             margin-top: 80vh;
-            z-index: 4;
-        }
-        button{
-            width: 60%;
-            max-width: 400px;
             z-index: 4;
         }
         .sqare{

@@ -34,7 +34,6 @@
             flex-direction: row;
           .input {
             width: calc(25% - 20px);
-  
             input, label {
               display: block;
               width: 100%;
@@ -53,6 +52,13 @@
               border-radius: 5px;
               padding: 10px;
               font-size: 14px;
+              outline: none;
+              &:hover{
+                outline: 1px solid rgb(0, 0, 0);
+              }
+              &:focus{
+                outline: 1px solid rgb(0, 0, 0);
+              }
             }
           }
         }
@@ -73,6 +79,12 @@
             font-size: 14px;
             width: calc(100%);
             resize: none;
+            &:hover{
+              outline: 1px solid rgb(0, 0, 0);
+            }
+            &:focus{
+              outline: 1px solid rgb(0, 0, 0);
+            }
           }
         }
       }

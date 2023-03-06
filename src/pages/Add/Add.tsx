@@ -23,7 +23,8 @@ function Add(){
 	const [height,setHeight]=useState<number>(0)
 	const [weight,setWeight]=useState<number>(0)
 	const [desc,setDesc]=useState<string>('')
-	function postData(){
+	function postData(e : any){
+		e.preventdefault()
 		if(name !== '' && age !== 0 && height !== 0 && weight !== 0 && desc !== ''){
 			Axios.post(`${APiURL}/add`,{
 				name :name,
