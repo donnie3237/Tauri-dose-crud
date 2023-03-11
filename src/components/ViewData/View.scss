@@ -1,0 +1,21 @@
+.View{
+    width:200px;
+    height: 30vh;
+    background-color: rgb(58, 58, 59);
+    position: fixed;
+    z-index: 4;
+    opacity: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    color: white;
+    border-top-left-radius: 10px;
+    h1{
+        font-size: 0.8em;
+    }
+    .close{
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+    }
+}

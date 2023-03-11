@@ -2,25 +2,34 @@ import React,{useState} from 'react'
 import './up.scss'
 import axios from 'axios'
 import {toast} from 'react-toastify'
+import { APiURL } from '../../api'
 function Update() {
+    const [checking , setChecking] = useState<boolean>(false)
     const [showUpdateLink, setShowUpdateLink] = useState(false);
     const version : string = "1.0.0"
-    const awnser = document.getElementById('awnser') as HTMLElement
-    function check(){
-      if("1.0.0" === version){
-        toast.success('this is latest version')
-      }else{
-        toast.warn(`New version is ${version}`)
-        const awnser = document.getElementById('awnser') as HTMLElement
-        setShowUpdateLink(true)
-      }
+    async function check(){
+      setChecking(true)
+      await axios.get(`${APiURL}/version`).then((response)=>{
+        if(response.data === version){
+          toast.success('this is latest version')
+        }else{
+          toast.warn(`New version is ${response.data}`)
+          const awnser = document.getElementById('awnser') as HTMLElement
+          setShowUpdateLink(true)
+        }
+      })
+      setChecking(false)
     }
   return (
     <div className='up FP' >
         <div className="check flex">
             <h1>Check Update!!</h1>
             <p>Yourversion is : {version}</p>
-            <a className='check-update flex' onClick={check}>Check update</a>
+            <button className='check-update flex' disabled={checking}  onClick={check}>
+              {
+                checking? 'Checking.....' : 'Check update'
+              }
+            </button>
             {
               showUpdateLink && (
                 <a

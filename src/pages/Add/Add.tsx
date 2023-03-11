@@ -5,6 +5,8 @@ import Axios from "axios";
 import { APiURL } from '../../api';
 import axios from 'axios';
 import {toast} from 'react-toastify'
+import { OnlyNumber , OnlyAlphabetThai } from '../../actions/Keyboard';
+
 //create
 function Add(){
   const [staTus ,setStaTus] = useState<string>("Connecting....")
@@ -23,42 +25,47 @@ function Add(){
 	const [height,setHeight]=useState<number>(0)
 	const [weight,setWeight]=useState<number>(0)
 	const [desc,setDesc]=useState<string>('')
-	function postData(e : any){
-		e.preventdefault()
-		if(name !== '' && age !== 0 && height !== 0 && weight !== 0 && desc !== ''){
-			Axios.post(`${APiURL}/add`,{
-				name :name,
-				age:age,
-				height:height,
-				weight:weight,
-				desc :desc
-			}).then((response)=>{
-				if(response.data === 'success'){
-				toast.success(`${name} has been created!`)
-				const TheName =document.getElementById('name') as HTMLInputElement ;
-				const TheAge = document.getElementById('age') as HTMLInputElement;
-				const TheHeight =document.getElementById('height') as HTMLInputElement ;
-				const TheWeight = document.getElementById('weight') as HTMLInputElement ;
-				const TheDesc = document.getElementById('desc') as HTMLInputElement ;
-				TheName.value = '' ;
-				TheAge.value = '' ;
-				TheHeight.value = '' ;
-				TheWeight.value = '' ;
-				TheDesc.value = '' ;
-				setAge(0)
-				setName('')
-				setHeight(0)
-				setWeight(0)
-				setDesc('')
-				}
-		}).catch(
-			(err)=>{
-				console.log(err)
+	const [isSubmitting , setIsSubmitting] = useState<boolean>(false)
+	const postData = (e: any) => {
+		e.preventDefault();
+		if (!isSubmitting && name !== '' && age !== 0 && height !== 0 && weight !== 0 && desc !== '') {
+		  setIsSubmitting(true);
+		  Axios.post(`${APiURL}/add`, {
+			name: name,
+			age: age,
+			height: height,
+			weight: weight,
+			desc: desc
+		  }).then((response) => {
+			if (response.data === 'success') {
+			  toast.success(`${name} has been created!`);
+			  const TheName = document.getElementById('name') as HTMLInputElement;
+			  const TheAge = document.getElementById('age') as HTMLInputElement;
+			  const TheHeight = document.getElementById('height') as HTMLInputElement;
+			  const TheWeight = document.getElementById('weight') as HTMLInputElement;
+			  const TheDesc = document.getElementById('desc') as HTMLInputElement;
+			  TheName.value = '';
+			  TheAge.value = '';
+			  TheHeight.value = '';
+			  TheWeight.value = '';
+			  TheDesc.value = '';
+			  setAge(0);
+			  setName('');
+			  setHeight(0);
+			  setWeight(0);
+			  setDesc('');
 			}
-		)
+		  }).catch(
+			(err) => {
+			  console.log(err);
+			}
+		  ).finally(() => {
+			setIsSubmitting(false);
+		  });
 		}else{
+			toast.warn('กรุณากรอกข้อมูลให้ครบถ้วน!')
 		}
-	}
+	  };
 	return (
 		<div className='Allcr FP' >
 			<div className="from">
@@ -73,6 +80,7 @@ function Add(){
 								placeholder='YourName' 
 								id='name' 
 								name="name"
+								onKeyDown={OnlyAlphabetThai}
 								onChange={(e) => {setName(e.target.value)}}
 							/>
 						</div>
@@ -80,7 +88,8 @@ function Add(){
 							<label >Age</label>
 						<input type="number" 
 							placeholder='YourAge(Y)' 
-							id='age' 
+							id='age'
+							onKeyDown={OnlyNumber} 
 							onChange={(e) => {setAge(parseInt(e.target.value))}}
 						/>
 						</div>
@@ -89,6 +98,7 @@ function Add(){
 						<input type="number" 
 							placeholder='YourHeight(cm)' 
 							id='height' 
+							onKeyDown={OnlyNumber}
 							onChange={(e) => {setHeight(parseInt(e.target.value))}}
 						/>
 						</div>
@@ -97,6 +107,7 @@ function Add(){
 						<input type="number" 
 							placeholder='YourWeight(kg)' 
 							id='weight' 
+							onKeyDown={OnlyNumber}
 							onChange={(e) => {setWeight(parseInt(e.target.value))}}
 							/>
 							
@@ -111,7 +122,7 @@ function Add(){
 							onChange={(e) => {setDesc(e.target.value)}}
 						/>
 					</div>
-					<button className='btn' onClick={postData} >create</button>
+					<button disabled={isSubmitting} className='btn' onClick={postData} >{isSubmitting? 'Loading..':'Create'}</button>
 				</div>
 			</div>
       <div className="status flex">Server Status is : {staTus}</div>

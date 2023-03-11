@@ -10,7 +10,6 @@ import Stat from "./pages/Stat/Stat";
 import Update from "./pages/Update/Update";
 import ScrollToTop from "./actions/ScrollToTop";
 import {appWindow} from '@tauri-apps/api/window'
-import KeyBoard  from "./actions/Keyboard";
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -20,9 +19,9 @@ function App() {
     event.preventDefault();
   });
   //not allow right click
-  // window.addEventListener("contextmenu", event => {
-  //   event.preventDefault();
-  // });
+  window.addEventListener("contextmenu", event => {
+    event.preventDefault();
+  });
   const [loading,setLoading] = useState<boolean>(true);
   useEffect(()=>{
     setTimeout(() => {

@@ -11,15 +11,15 @@ function Mem() {
             <h1>Database system</h1>
             <img src={db} alt="" />
         </div>
-        <div className="cont">
+        <div className="cont  flex">
             <h1>MongoDB Compass</h1>
             <img src={one} alt="" />
         </div>
-        <div className="cont">
+        <div className="cont flex">
             <h1>MongoDB Realm</h1>
             <img src={two} alt="" />
         </div>
-        <div className="cont">
+        <div className="cont flex">
             <h1>MongoDB Charts</h1>
             <img src={thr} alt="" />
         </div>

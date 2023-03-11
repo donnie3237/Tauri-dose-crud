@@ -12,6 +12,15 @@ table {
       padding: 8px;
       text-align: left;
       border-bottom: 1px solid #828181;
+      a{
+        cursor: pointer;
+        &:hover{
+            svg{
+                color: rgb(255, 0, 0);
+                transition: all 0.2s;
+            }
+        }
+      }
     }
     th {
       background-color: #000000;
@@ -19,7 +28,7 @@ table {
       height: 40px;
     }
     tr:hover {
-      background-color: #b2afaf;
+      background-color: #cdcccc;
     }
 }
 .contain-title{
